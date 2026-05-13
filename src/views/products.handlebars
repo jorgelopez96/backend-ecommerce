@@ -3,6 +3,21 @@
   {{#each products}}
     <div class="col-md-4 mb-3">
       <div class="card h-100">
+        {{#if thumbnails.length}}
+          <img
+            src="{{thumbnails.[0]}}"
+            class="card-img-top"
+            alt="{{title}}"
+            style="height: 200px; object-fit: cover;"
+          />
+        {{else}}
+          <div
+            class="bg-secondary d-flex align-items-center justify-content-center"
+            style="height: 200px;"
+          >
+            <span class="text-white">Sin imagen</span>
+          </div>
+        {{/if}}
         <div class="card-body">
           <h5 class="card-title">{{title}}</h5>
           <p class="card-text">{{description}}</p>
